@@ -8,9 +8,9 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class AppComponent {
   registerationForm = new FormGroup({
-    userName : new FormControl(),
-    password : new FormControl(),
-    confirmPassword : new FormControl()
+    userName : new FormControl(''),
+    password : new FormControl(''),
+    confirmPassword : new FormControl('')
   })
 
   
