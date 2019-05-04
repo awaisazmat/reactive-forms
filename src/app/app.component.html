@@ -17,18 +17,18 @@
       <input formControlName="confirmPassword" type="password" class="form-control">
     </div>
 
-    <div>
+    <div [formGroup]="address">
       <div class="form-control">
         <label>City</label>
-        <input type="text" class="form-control">
+        <input formControlName="city" type="text" class="form-control">
       </div>
       <div class="form-control">
           <label>State</label>
-          <input type="text" class="form-control">
+          <input formControlName="state" type="text" class="form-control">
         </div>
         <div class="form-control">
             <label>PostalCode</label>
-            <input type="text" class="form-control">
+            <input formControlName="postalCode" type="text" class="form-control">
           </div>
     </div>
 
