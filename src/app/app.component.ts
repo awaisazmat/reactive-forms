@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -7,16 +7,18 @@ import { FormGroup, FormControl } from '@angular/forms';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  registerationForm = new FormGroup({
-    userName : new FormControl(''),
-    password : new FormControl(''),
-    confirmPassword : new FormControl(''),
-    address : new FormGroup({
-      city: new FormControl(''),
-      state: new FormControl(''),
-      postalcode: new FormControl('')
+
+constructor(private fb: FormBuilder){}
+
+  registerationForm = this.fb.group({
+    userName: [''],
+    password: [''],
+    confirmPassword: [''],
+    address: this.fb.group({
+      city: [''],
+      state: [''],
+      postalCode: ['']
     })
   })
-
   
 }
