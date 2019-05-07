@@ -5,7 +5,16 @@
 
     <div class="form-group">
       <label>Username</label>
-      <input  formControlName="userName" type="text" class="form-control">
+      <input [class.is-invalid]="registerationForm.get('userName').invalid &&
+      registerationForm.get('userName').touched" formControlName="userName" type="text" class="form-control">
+      <!-- <small [class.d-none]="registerationForm.get('userName').valid ||
+      registerationForm.get('userName').untouched">UserName is required</small> -->
+
+      <div *ngIf="registerationForm.get('userName').invalid &&
+      registerationForm.get('userName').touched">
+       <small *ngIf="registerationForm.get('userName').errors?.required">Username is required.</small>
+       <small *ngIf="registerationForm.get('userName').errors?.minlength">Username must contain atleast 3 character.</small>
+    </div>
       
     </div>
 

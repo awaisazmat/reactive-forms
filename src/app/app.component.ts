@@ -1,5 +1,5 @@
 import { Component, createPlatformFactory } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +11,7 @@ export class AppComponent {
   constructor(private fb: FormBuilder){}
 
   registerationForm = this.fb.group({
-    userName: [''],
+    userName: ['', [Validators.required, Validators.minLength(3)]],
     password: [''],
     confirmPassword: [''],
     address: this.fb.group({
