@@ -7,6 +7,10 @@ import { FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+  get userName(){
+    return this.registerationForm.get('userName');
+  }
   
   constructor(private fb: FormBuilder){}
 
