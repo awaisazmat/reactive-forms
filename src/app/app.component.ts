@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, createPlatformFactory } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 
 @Component({
@@ -7,8 +7,8 @@ import { FormBuilder } from '@angular/forms';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-
-constructor(private fb: FormBuilder){}
+  
+  constructor(private fb: FormBuilder){}
 
   registerationForm = this.fb.group({
     userName: [''],
@@ -18,7 +18,9 @@ constructor(private fb: FormBuilder){}
       city: [''],
       state: [''],
       postalCode: ['']
-    })
   })
-  
+});
 }
+  
+
+
